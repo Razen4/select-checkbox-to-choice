@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.hidden {
+  display : none;
+}
+</style>
+<body>
+    <fieldset class="question">
+    <label for="coupon_question">Do you have a coupon?</label>
+    <input class="coupon_question" type="checkbox" name="coupon_question" value="1" onChange="test(this);" />
+    <span class="item-text">Yes</span>
+</fieldset>
+
+<fieldset id="a" class="answer hidden">
+    <label for="coupon_field">Your coupon:</label>
+    <input type="text" name="coupon_field" id="coupon_field"/>
+</fieldset>
+
+<script>
+function test(v){
+	//alert("xxxx"+v.value)
+  console.log(v.checked)
+  if(v.checked){
+    	document.getElementById("a").classList.remove("hidden");
+  }else{
+      document.getElementById("a").classList.add("hidden");
+  }
+}</script>
+</body>
+</html>
